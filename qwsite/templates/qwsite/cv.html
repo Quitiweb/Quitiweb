@@ -18,17 +18,19 @@
 	</head>
 
 	<body>
+	{% for cv in cv_list %}
+	{% if cv.activo %}
 
 		<!-- Header -->
 		<header role="banner">
 			<div class="container_16">
 					<hgroup>
-						<h1>Rafael Romero</h1>
-						<h2>WebApp Developer</h2>
+						<h1>{{ cv.name }}</h1>
+						<h2>{{ cv.title }}</h2>
 					</hgroup>
 	
 					<figure>
-						<img src="{% static 'qwsite/img/avatar.jpg' %}" alt="Rafael Romero">
+						<img src="https://drive.google.com/uc?id={{ cv.profilePicture }}" alt="{{ cv.name }}">
 					</figure>
 			</div>
 		</header>
@@ -37,14 +39,14 @@
 		<section class="contactform clearfix">
 			<div class="container_16">
 				<h3>Contact me</h3>
-				<p>Remplissez le formulaire ci-dessous afin de m'envoyer un message. Je vous répondrais dans les plus bref délai. 
-				<br><em>Tous les champs sont requis.</em></p>
+				<p>I will asnwer you as soon as possible 
+				<br><em>Every field are required</em></p>
 				<form novalidate="novalidate" method="post" action="#" name="contact" class="grid_16">
-					<p class="grid_10"><textarea name="message" placeholder="Votre message" class="required"></textarea></p>
+					<p class="grid_10"><textarea name="message" placeholder="Your message" class="required"></textarea></p>
 					<p class="grid_6">
-						<input name="nom" placeholder="Nom - Prénom" class="required" type="text">
-						<input name="email" placeholder="Adresse email" class="required" type="email">	
-						<input name="envoi" value="Envoyer le message" class="required" type="submit">
+						<input name="nom" placeholder="Full Name" class="required" type="text">
+						<input name="email" placeholder="email" class="required" type="email">	
+						<input name="envoi" value="Send the message" class="required" type="submit">
 						<span class="messageform"></span>
 					</p>
 				</form>
@@ -57,98 +59,80 @@
 				<!-- About Me -->
 				<div class="grid_8 apropos">
 					<h3><i class="fas fa-user-tie"></i>About Me</h3>
-					<p>Expert in enterprise applications systems development</p>
-					<p>Pellentesque nec nisi at sapien sagittis sagittis. Aliquam eu 
-					condimentum mauris. Proin accumsan enim at risus hendrerit lobortis. 
-					Nunc sollicitudin sodales lectus, et rhoncus mi molestie hendrerit. 
-					Vestibulum velit lorem, rhoncus a congue ultricies, faucibus facilisis 
-					risus. Mauris turpis ante, aliquet ac venenatis at, ornare ut velit. 
-					Duis ut erat neque, eget consectetur tellus. </p>
+					<p>{{ cv.aboutMeTitle }}</p>
+					<p>{{ cv.aboutMeDescription }}</p>
 				</div>
 
 				<!-- Competences -->
 				<div class="grid_8 competences">
 					<h3><i class="fas fa-wrench"></i>Skills</h3>
 					<ul class="barres">
-						<li data-skills="80">Python<span style="width: 80%;"></span></li>
-						<li data-skills="60">Django<span style="width: 60%;"></span></li>
-						<li data-skills="75">HTML5<span style="width: 75%;"></span></li>
-						<li data-skills="40">CSS3<span style="width: 40%;"></span></li>
-						<li data-skills="95">JavaScript<span style="width: 95%;"></span></li>
+						{% for sk in cv.skills.all %}
+							<li data-skills="{{ sk.level }}">{{ sk.title }}<span style="width: {{ sk.level }}%;"></span></li>
+						{% endfor %}
 					</ul>
 				</div>
 			</div>
 
-			<!-- Experiences -->
+			<!-- Experience -->
 			<div class="grid_16 experiences">
 				<h3><i class="fas fa-suitcase"></i>Experience</h3>
 				<ul>
-					<li>
-						<h4><strong>Nom du poste</strong> chez nom de l'employeur</h4>
-						<span class="lieu"><i class="fas fa-map-marker-alt"></i>Lugar</span>
-						<span class="dates"><i class="far fa-calendar-alt"></i>Fecha</span>
-						<p>Une petite description du poste, décrivez votre rôle et vos 
-						tâches en quelques mots afin que le recruteur en sache plus sur la 
-						nature de votre travail.</p>
-					</li>
-					<li>
-						<h4><strong>Nom du poste</strong> chez nom de l'employeur</h4>
-						<span class="lieu"><i class="fas fa-map-marker-alt"></i>Lugar</span>
-						<span class="dates"><i class="far fa-calendar-alt"></i>Fecha</span>
-						<p>Une petite description du poste, décrivez votre rôle et vos 
-						tâches en quelques mots afin que le recruteur en sache plus sur la 
-						nature de votre travail.</p>
-					</li>
+					{% for xp in cv.experience.all %}
+						<li>
+							<h4><strong>{{ xp.title }}</strong> {{ xp.role }}</h4>
+							<span class="lieu"><i class="fas fa-map-marker-alt"></i>{{ xp.place }}</span>
+							<span class="dates"><i class="far fa-calendar-alt"></i>{{ xp.date }}</span>
+							<p>{{ xp.description }}</p>
+						</li>
+					{% endfor %}
 				</ul>
 			</div>
 
-			<!-- Formations -->
+			<!-- Education -->
 			<div class="grid_16 formations">
-				<h3><i class="fas fa-user-graduate"></i>Formations</h3>
+				<h3><i class="fas fa-user-graduate"></i>Education</h3>
 				<ul>
-					<li>
-						<h4><strong>Nom de la formation / diplôme</strong> à nom de l'école</h4>
-						<span class="lieu">Lieu</span>
-						<span class="dates">Période</span>
-						<p>Clarifiez la formation (les abréviations ne sont pas connues de tout le monde).</p>
-					</li>
-					<li>
-						<h4><strong>Nom de la formation / diplôme</strong> à nom de l'école</h4>
-						<span class="lieu">Lieu</span>
-						<span class="dates">Période</span>
-						<p>Clarifiez la formation (les abréviations ne sont pas connues de tout le monde).</p>
-					</li>
+					{% for ed in cv.education.all %}
+						<li>
+							<h4><strong>{{ ed.title }}</strong> {{ ed.universityCollege }}</h4>
+							<span class="dates"><i class="far fa-calendar-alt"></i>{{ ed.date }}</span>
+						</li>
+					{% endfor %}
 				</ul>
 			</div>
-		
+
 			<div class="grid_16">
-				<!-- Loisirs -->
+				<!-- Hobbies -->
 				<div class="grid_8 loisirs">
 					<h3><i class="fas fa-volleyball-ball"></i>Hobbies</h3>
-					<p><strong>Sports :</strong> si vous en pratiquez</p>
-					<p><strong>Association :</strong> si vous êtes membre d'une association</p>
-					<p>D'autres loisirs plus vagues, complétez ici.</p>
+					{% for hb in cv.hobbies.all %}
+						<p>{{ hb.title }}</p>
+					{% endfor %}
 				</div>
 
 				<!-- Contact -->
 				<div class="grid_8 contact">
 					<h3><i class="fas fa-at"></i>Contact</h3>
-					<p>Si mon profil vous intéresse, n'hésitez pas à me contacter :</p>
+					<p>If you are interested on my profile, don't be hesitate to contact me</p>
 					<ul>
-						<li class="lieu">Paris, France</li>
-						<li class="phone">06 00 00 00 00</li>
+						<li class="lieu">Cadiz, Spain</li>
+						<li class="phone">+34 951 81 51 08</li>
 						<li class="mail"><a href="mailto:rafa@quitiweb.com">rafa@quitiweb.com</a></li>
 						<li class="site"><a href="https://quitiweb.com">quitiweb.com</a></li>
-						<li class="form"><a class="toContactform">via le formulaire de contact</a></li>
+						<li class="form"><a class="toContactform">Contact Form</a></li>
 					</ul>
 				</div>
 			</div>
 		</section>
+
 
 		<!-- Scripts JavaScript -->
 		<script src="{% static 'qwsite/js/jquery-1.js' %}"></script>
 		<script src="{% static 'qwsite/js/validate.js' %}"></script>
 		<script src="{% static 'qwsite/js/plugins.js' %}"></script>
 
+	{% endif %}
+	{% endfor %}
 	</body>
 </html>
