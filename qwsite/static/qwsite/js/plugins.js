@@ -1,24 +1,24 @@
 $(document).ready(function() {
 
-  /* Création des barres de compétences + animations */
+  /* Bar creation + animations */
   $('.barres li').each(function() {
   	var pourcentage = $(this).attr('data-skills');
   	$(this).append($("<span></span>").animate({
   		width : ''+ pourcentage +'%' }, 2000));	
   });
-  
-  
-  
+
+
+
   /* Afficher le formulaire de contact en scrollant */
   var documentBody = (($.browser.chrome)||($.browser.safari)) ? document.body : document.documentElement;
   $('.toContactform').click(function () {
   	$('.contactform').slideDown('slow');
-  	$(documentBody).animate({scrollTop: $('.contactform').offset().top}, 1000);
+  	window.scrollTo(0,0);
   });
-  
-  
-  /* Envoi du mail via le formulaire */
-	$('form[name=contact]').validate({ // Validation des champs
+
+
+  /* Send the email using the form */
+	$('form[name=contact]').validate({ // Fields validation
   	submitHandler: function(form) {
 		  	nom = $('form[name=contact]').find("input[name=nom]").val();
 		  	email = $('form[name=contact]').find("input[name=email]").val();
@@ -37,10 +37,10 @@ $(document).ready(function() {
 		  			 $(".messageform").addClass("envoi-error");
 		  			 $(".messageform").append(data);
 		  		 }
-		  	}); // Fin $.post
+		  	}); // $.post End
 	  	return false;
-	  } // Fin submitHandler
-  }); // Fin validate
-  
-  
-}); // Fin document.ready
+	  } // submitHandler End
+  }); // validate End
+
+
+}); // document.ready End

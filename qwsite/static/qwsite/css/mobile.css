@@ -1,19 +1,13 @@
 /***************************************
-/* Grille de mise en page pour le mobile
+/* CSS Mobile
 ***************************************/
 .grid_6,
-.grid_8,
 .grid_10,
 .grid_16,
 .container_16 {
 	margin: 0 10px;
 }
 
-/* 
-Nom du thème : Simple Vitae (ou Simple Curriculum ou Simple Resume)
-Description : Votre curriculum vitae sur Internet, un moyen supplémentaire de vous faire connaitre. Ce thème correspond à tous les types de métiers.
-Créateur : Christophe HERMANN (@chrishrmnn)
-*/
 
 /**********
 /* Header
@@ -171,45 +165,35 @@ Créateur : Christophe HERMANN (@chrishrmnn)
 		position: relative;
  	}
 	
-	section[role=main] h3:after, h3:before {
-		content: ' ';
+	section[role=main] h3 i {
+		content: '';
 		display: block;
 		height: 50px;
+		width: 50px;
+		background-color: #33a4c9;
+		top: -15px;
 		left: 0;
 		position: absolute;
-		top: -15px;
-		width: 50px;
-	}
-	
-	section[role=main] h3:before {
-		background-color: #33a4c9;
 		border-radius: 25px;
 	}
-	
-		/***************
-		/* Pictos titres
-		***************/
-		
-		section[role=main] .competences h3:after {
-			background-position: 11px -34px;
-		}
-	
-		section[role=main] .experiences h3:after {
-			background-position: 11px -86px;
-		}
-		
-		section[role=main] .formations h3:after {
-			background-position: 10px -139px;
-		}
-		
-		section[role=main] .loisirs h3:after {
-			background-position: 10px -250px;
-		}
-		
-		section[role=main] .contact h3:after {
-			background-position: 11px -194px;
-		}
-	
+
+	.fa-suitcase, .fa-user-tie, .fa-wrench, .fa-user-graduate, .fa-volleyball-ball, .fa-at {
+		color: white;
+	}
+
+	.fa-suitcase:before, .fa-user-tie:before, .fa-wrench:before, .fa-user-graduate:before, .fa-volleyball-ball:before, .fa-at:before {
+		top: 0.5em;
+		position: absolute;
+	}
+
+	.fa-suitcase:before, .fa-wrench:before, .fa-at:before {
+		left: 0.5em;
+	}
+
+	.fa-user-tie:before, .fa-user-graduate:before, .fa-volleyball-ball:before {
+		left: 0.6em;
+	}
+
 	section[role=main] h4 {
 		margin-bottom: 0px;
 	}
