@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'qwsite',
+    'qaweb',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,3 +125,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = '/home/rafrom3/quitiweb.com/public/static/'
+
+# For test pourposes
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# To send emails using SMTP
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

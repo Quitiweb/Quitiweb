@@ -41,7 +41,9 @@
 				<h3>Contact me</h3>
 				<p>I will answer you as soon as possible 
 				<br><em>Every field are required</em></p>
-				<form novalidate="novalidate" method="post" action="#" name="contact" class="grid_16">
+				<form novalidate="novalidate" method="post" name="contact" class="grid_16">
+					{% csrf_token %}
+					{{ form.as_p }}
 					<p class="grid_10"><textarea name="message" placeholder="Your message" class="required"></textarea></p>
 					<p class="grid_6">
 						<input name="nom" placeholder="Full Name" class="required" type="text">

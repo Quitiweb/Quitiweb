@@ -17,30 +17,4 @@ $(document).ready(function() {
   });
 
 
-  /* Send the email using the form */
-	$('form[name=contact]').validate({ // Fields validation
-  	submitHandler: function(form) {
-		  	nom = $('form[name=contact]').find("input[name=nom]").val();
-		  	email = $('form[name=contact]').find("input[name=email]").val();
-		  	message = $('form[name=contact]').find("textarea[name=message]").val();
-		  	
-		  	$.post("envoi.php", { nom: nom, mail:email, message:message },
-		  	   function(data) {
-		  	     if(data != "ok") {
-		  	     	$("input[name=envoi]").attr('disabled', 'disabled');
-		  			$('input[name=envoi]').fadeOut(500,function() {
-		  				$(".messageform").addClass("envoi-valid");
-		  				$(".messageform").append(data);
-		  				$('.messageform').fadeIn(500);  			
-		  			});
-		  		 } else {
-		  			 $(".messageform").addClass("envoi-error");
-		  			 $(".messageform").append(data);
-		  		 }
-		  	}); // $.post End
-	  	return false;
-	  } // submitHandler End
-  }); // validate End
-
-
 }); // document.ready End
