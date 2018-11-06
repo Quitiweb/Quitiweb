@@ -43,12 +43,11 @@
 				<br><em>Every field are required</em></p>
 				<form novalidate="novalidate" method="post" name="contact" class="grid_16">
 					{% csrf_token %}
-					{{ form.as_p }}
-					<p class="grid_10"><textarea name="message" placeholder="Your message" class="required"></textarea></p>
+					<p class="grid_10">{{ form.message }}</p>
 					<p class="grid_6">
-						<input name="nom" placeholder="Full Name" class="required" type="text">
-						<input name="email" placeholder="email" class="required" type="email">	
-						<input name="envoi" value="Send the message" class="required" type="submit">
+						{{ form.subject }}
+						{{ form.from_email }}
+						<input name="send" value="Send the message" class="required" type="submit">
 						<span class="messageform"></span>
 					</p>
 				</form>
