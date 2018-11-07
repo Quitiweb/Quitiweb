@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from django.conf.global_settings import EMAIL_PORT, EMAIL_HOST_USER
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -127,7 +128,13 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/home/rafrom3/quitiweb.com/public/static/'
 
 # For test pourposes
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # To send emails using SMTP
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'sub5.mail.dreamhost.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'info@quitiweb.com'
+EMAIL_HOST_PASSWORD = 'Bernardito84'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True

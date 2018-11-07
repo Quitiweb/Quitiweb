@@ -22,9 +22,10 @@ def cv(request):
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
             try:
-                send_mail(subject, message, from_email, ['admin@example.com'])
+                send_mail(subject, message, from_email, ['rafa@quitiweb.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found')
+
             form = ContactForm()
             return redirect('success')
         else:
@@ -38,4 +39,4 @@ def cv(request):
     return HttpResponse(template.render(context, request))
 
 def successView(request):
-    return HttpResponse("Success! Thank you for your message. <a href='/cv'>back to CV</a>")
+    return render(request, 'qwsite/success.html')
