@@ -154,7 +154,7 @@
 		overflow: hidden;
 	}
 	
-	.apropos, .competences, .experiences, .formations, .loisirs, .contact {
+	.apropos, .competences, .experiences, .education, .training, .contact {
 		margin-top: 63px;
 	}
 	
@@ -177,20 +177,24 @@
 		border-radius: 25px;
 	}
 
-	.fa-suitcase, .fa-user-tie, .fa-wrench, .fa-user-graduate, .fa-volleyball-ball, .fa-at {
+	.fa-suitcase, .fa-user-tie, .fa-wrench, .fa-user-graduate, .fa-laptop-code, .fa-at {
 		color: white;
 	}
 
-	.fa-suitcase:before, .fa-user-tie:before, .fa-wrench:before, .fa-user-graduate:before, .fa-volleyball-ball:before, .fa-at:before {
+	.fa-suitcase:before, .fa-user-tie:before, .fa-wrench:before, .fa-user-graduate:before, .fa-laptop-code:before, .fa-at:before {
 		top: 0.5em;
 		position: absolute;
+	}
+
+	.fa-laptop-code:before {
+		left: 0.4em;
 	}
 
 	.fa-suitcase:before, .fa-wrench:before, .fa-at:before {
 		left: 0.5em;
 	}
 
-	.fa-user-tie:before, .fa-user-graduate:before, .fa-volleyball-ball:before {
+	.fa-user-tie:before, .fa-user-graduate:before {
 		left: 0.6em;
 	}
 
@@ -203,14 +207,18 @@
 		font-weight: normal;
 	}
 	
-	.experiences li, .formations li {
-		margin-bottom: 63px;
+	.experiences li, .education li {
+		margin-bottom: 15px;
 	}
 	
-	.experiences li:last-child, .formations li:last-child {
+	.experiences li:last-child, .education li:last-child {
 		margin-bottom: 21px;
 	}
-	
+
+	.training p {
+		margin-bottom: 0;
+	}
+
 	/**********************************************
 	/* Affichage des compétences sous forme de tags
 	**********************************************/
@@ -224,7 +232,7 @@
 		margin: 0 7px 17px 0;
 		padding: 5px 10px;
 	}
-	
+
 	/************************************************
 	/* Affichage des compétences sous forme de barres
 	*************************************************/

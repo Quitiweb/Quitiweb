@@ -35,7 +35,7 @@
 			</div>
 		</header>
 
-		<!-- Contact -->
+		<!-- Contact Form -->
 		<section class="contactform clearfix">
 			<div class="container_16">
 				<h3>Contact me</h3>
@@ -82,8 +82,10 @@
 					{% for xp in cv.experience.all %}
 						<li>
 							<h4><strong>{{ xp.title }}</strong> {{ xp.role }}</h4>
+							<span class="dates"><i class="far fa-calendar-alt"></i>From {{ xp.fromDate }}</span>
+							<span class="dates"><i class="far fa-calendar-alt"></i>To {{ xp.toDate }}</span>
 							<span class="lieu"><i class="fas fa-map-marker-alt"></i>{{ xp.place }}</span>
-							<span class="dates"><i class="far fa-calendar-alt"></i>{{ xp.date }}</span>
+							{% if xp.remote %}<span class="lieu"><i class="fas fa-wifi"></i>Remote</span>{% endif %}
 							<p>{{ xp.description }}</p>
 						</li>
 					{% endfor %}
@@ -91,37 +93,38 @@
 			</div>
 
 			<!-- Education -->
-			<div class="grid_16 formations">
+			<div class="grid_16 education">
 				<h3><i class="fas fa-user-graduate"></i>Education</h3>
 				<ul>
 					{% for ed in cv.education.all %}
 						<li>
 							<h4><strong>{{ ed.title }}</strong> {{ ed.universityCollege }}</h4>
-							<span class="dates"><i class="far fa-calendar-alt"></i>{{ ed.date }}</span>
+							<span class="dates"><i class="far fa-calendar-alt"></i>{{ ed.year }}</span>
 						</li>
 					{% endfor %}
 				</ul>
 			</div>
 
 			<div class="grid_16">
-				<!-- Hobbies -->
-				<div class="grid_8 loisirs">
-					<h3><i class="fas fa-volleyball-ball"></i>Hobbies</h3>
-					{% for hb in cv.hobbies.all %}
-						<p>{{ hb.title }}</p>
+				<!-- Training -->
+				<div class="grid_8 training">
+					<h3><i class="fas fa-laptop-code"></i>Training/Continuing Education</h3>
+					{% for tr in cv.training.all %}
+						<p>{{ tr.course }}</p>
+						<span class="lieu">{{ tr.company_vendor }}</span>
 					{% endfor %}
 				</div>
 
 				<!-- Contact -->
 				<div class="grid_8 contact">
 					<h3><i class="fas fa-at"></i>Contact</h3>
-					<p>If you are interested on my profile, don't be hesitate to contact me</p>
+					<p>If you are interested on my profile, contact me</p>
 					<ul>
-						<li class="lieu">Cadiz, Spain</li>
+						<li class="lieu"><i class="fas fa-map-marker-alt"></i>Cadiz, Spain</li>
 						<li class="phone">+34 951 81 51 08</li>
 						<li class="mail"><a href="mailto:rafa@quitiweb.com">rafa@quitiweb.com</a></li>
 						<li class="site"><a href="https://quitiweb.com">quitiweb.com</a></li>
-						<li class="form"><a class="toContactform">Contact Form</a></li>
+						<li class="form"><h4><a class="toContactform">Contact Form</a></h4></li>
 					</ul>
 				</div>
 			</div>
@@ -133,6 +136,20 @@
 		<script src="{% static 'qwsite/js/validate.js' %}"></script>
 		<script src="{% static 'qwsite/js/plugins.js' %}"></script>
 
+	{% else %}
+		<!-- Header -->
+		<header role="banner">
+			<div class="container_16">
+				<hgroup>
+					<h1>No CV has been selected as Active</h1>
+					<h2>Please, go to the <a href="/admin">Admin</a> section to activate one CV</h2>
+				</hgroup>
+
+				<figure>
+					<img src="https://drive.google.com/uc?id=1o0iN5mg9JyB-Z9bAiunKB4De0Xl7-CTS" alt="Your Profile Pic">
+				</figure>
+			</div>
+		</header>
 	{% endif %}
 	{% endfor %}
 	</body>

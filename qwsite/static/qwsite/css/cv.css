@@ -235,24 +235,28 @@
 		border-radius: 25px;
 	}
 
-	.fa-suitcase, .fa-user-tie, .fa-wrench, .fa-user-graduate, .fa-volleyball-ball, .fa-at {
+	.fa-suitcase, .fa-user-tie, .fa-wrench, .fa-user-graduate, .fa-laptop-code, .fa-at {
 		color: white;
 	}
 
-	.fa-suitcase:before, .fa-user-tie:before, .fa-wrench:before, .fa-user-graduate:before, .fa-volleyball-ball:before, .fa-at:before {
+	.fa-suitcase:before, .fa-user-tie:before, .fa-wrench:before, .fa-user-graduate:before, .fa-laptop-code:before, .fa-at:before {
 		top: 0.5em;
 		position: absolute;
 	}
 
+	.fa-laptop-code:before {
+		left: 0.4em;
+	}
+	
 	.fa-suitcase:before, .fa-wrench:before, .fa-at:before {
 		left: 0.5em;
 	}
 
-	.fa-user-tie:before, .fa-user-graduate:before, .fa-volleyball-ball:before {
+	.fa-user-tie:before, .fa-user-graduate:before {
 		left: 0.6em;
 	}
 
-	.experiences ul, .formations ul {
+	.experiences ul, .education ul {
 		margin-left: 60px;
 	}
 
@@ -265,18 +269,22 @@
 		font-weight: normal;
 	}
 	
-	.experiences li, .formations li {
-		margin-bottom: 63px;
+	.experiences li, .education li {
+		margin-bottom: 15px;
 	}
 	
-	.experiences li:last-child, .formations li:last-child {
+	.experiences li:last-child, .education li:last-child {
 		margin-bottom: 21px;
 	}
-	
-	.experiences li p, .formations li p {
+
+	.experiences li p, .education li p {
 		margin-left: 30px;
 	}
-	
+
+	.training p {
+		margin-bottom: 0;
+	}
+
 	/**********************************************
 	/* Affichage des compétences sous forme de tags
 	**********************************************/
