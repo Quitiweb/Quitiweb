@@ -235,7 +235,22 @@
 		border-radius: 25px;
 	}
 
-	.fa-suitcase, .fa-user-tie, .fa-wrench, .fa-user-graduate, .fa-laptop-code, .fa-at {
+	.moreTraining {
+		margin-left: 30px;
+	}
+
+	.fa-angle-down, .fa-angle-right {
+		color: #33a4c9;
+		position: absolute;
+		cursor: pointer;
+	}
+
+	.fa-times {
+		position: relative;
+		cursor: pointer;
+	}
+
+	.fa-suitcase, .fa-user-tie, .fa-wrench, .fa-user-graduate, .fa-laptop-code, .fa-at, .fa-times {
 		color: white;
 	}
 

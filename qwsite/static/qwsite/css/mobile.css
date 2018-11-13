@@ -177,7 +177,17 @@
 		border-radius: 25px;
 	}
 
-	.fa-suitcase, .fa-user-tie, .fa-wrench, .fa-user-graduate, .fa-laptop-code, .fa-at {
+	.fa-angle-down, .fa-angle-right {
+		color: #33a4c9;
+		cursor: pointer;
+	}
+
+	.fa-times {
+		position: relative;
+		cursor: pointer;
+	}
+
+	.fa-suitcase, .fa-user-tie, .fa-wrench, .fa-user-graduate, .fa-laptop-code, .fa-at, .fa-times {
 		color: white;
 	}
 
