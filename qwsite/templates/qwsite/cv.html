@@ -87,7 +87,7 @@
 							<span class="dates"><i class="far fa-calendar-alt"></i>To {{ xp.toDate }}</span>
 							<span class="lieu"><i class="fas fa-map-marker-alt"></i>{{ xp.place }}</span>
 							{% if xp.remote %}<span class="lieu"><i class="fas fa-wifi"></i>Remote</span>{% endif %}
-							<p>{{ xp.description }}</p>
+							<p>{{ xp.description | safe | linebreaks }}</p>
 						</li>
 					{% endfor %}
 				</ul>
