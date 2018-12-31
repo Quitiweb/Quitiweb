@@ -11,7 +11,7 @@ def index(request):
 
 def cv(request):
     cv_list = models.cv.objects.all()
-    template = loader.get_template('cv.html')
+    template = loader.get_template('qwsite/cv.html')
 
     if request.method == 'GET':
         form = ContactForm()
