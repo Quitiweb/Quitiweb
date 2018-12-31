@@ -54,7 +54,7 @@ ROOT_URLCONF = 'Quitiweb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),'templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),'templates', 'Quitiweb/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
