@@ -8,7 +8,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 PROJECT_APP_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(PROJECT_APP_ROOT))
-PUBLIC_ROOT = os.path.abspath(os.path.join(PROJECT_ROOT, 'public'))
+HOST_ROOT = os.path.abspath(os.path.dirname(PROJECT_ROOT))
+PUBLIC_ROOT = os.path.abspath(os.path.join(HOST_ROOT, 'public'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
