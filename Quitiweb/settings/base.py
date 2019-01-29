@@ -10,12 +10,6 @@ PROJECT_APP_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(PROJECT_APP_ROOT))
 PUBLIC_ROOT = os.path.abspath(os.path.join(PROJECT_ROOT, 'public'))
 
-########## SECRET CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-# Note: This key should only be used for development and testing.
-SECRET_KEY = '508pc(^8(lpv^@thcl!-1=@9_5r9idi4%-%nl&=qv@3%4@maea'
-########## END SECRET CONFIGURATION
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -54,7 +48,7 @@ ROOT_URLCONF = 'Quitiweb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),'templates', 'Quitiweb/templates'],
+        'DIRS': ['templates', 'Quitiweb/templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
