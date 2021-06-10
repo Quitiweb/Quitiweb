@@ -1,4 +1,4 @@
-django==2.1.10
+django==2.2.24
 django-tinymce==2.8.0
 stripe==2.26.0
 gitpython==2.1.11
