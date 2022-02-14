@@ -1,9 +1,5 @@
 # Quitiweb main App
 
-[![N|Solid](https://www.rindus.de/images/webgrafik_23375x70.svg)](https://www.rindus.de)
-
-[![Build Status](https://travis-ci.org/Quitiweb/Rindus.svg?branch=master)](https://travis-ci.org/Quitiweb/Rindus)
-
 This is a Django CRUD App with a PostgreSQL database. This small application implements the next features:
 
   - Administrators of the app can authenticate using a Google account
