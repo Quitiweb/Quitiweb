@@ -1,4 +1,4 @@
-# RindusApp
+# Quitiweb main App
 
 [![N|Solid](https://www.rindus.de/images/webgrafik_23375x70.svg)](https://www.rindus.de)
 
