@@ -1,8 +1,4 @@
-# RindusApp
-
-[![N|Solid](https://www.rindus.de/images/webgrafik_23375x70.svg)](https://www.rindus.de)
-
-[![Build Status](https://travis-ci.org/Quitiweb/Rindus.svg?branch=master)](https://travis-ci.org/Quitiweb/Rindus)
+# Quitiweb main App
 
 This is a Django CRUD App with a PostgreSQL database. This small application implements the next features:
 
