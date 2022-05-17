@@ -13,7 +13,7 @@
 
 		<title>Quitiweb - CV</title>
 		<meta charset="utf-8">
-		{% load staticfiles %}
+		{% load static %}
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,14 +34,14 @@
 		<!-- Header -->
 		<header role="banner">
 			<div class="container_16">
-					<hgroup>
-						<h1>{{ cv.name }}</h1>
-						<h2>{{ cv.title }}</h2>
-					</hgroup>
-	
-					<figure>
-						<img src="https://drive.google.com/uc?id={{ cv.profilePicture }}" alt="{{ cv.name }}">
-					</figure>
+				<hgroup>
+					<h1>{{ cv.name }}</h1>
+					<h2>{{ cv.title }}</h2>
+				</hgroup>
+
+				<figure>
+					<img src="https://drive.google.com/uc?id={{ cv.profilePicture }}" alt="{{ cv.name }}">
+				</figure>
 			</div>
 		</header>
 

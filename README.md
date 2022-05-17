@@ -6,7 +6,7 @@ This is a Django CRUD App with a PostgreSQL database. This small application imp
   - Administrators are able to create, read, update and delete users
   - The manipulation operations on a user is restricted to the administrator who created them
   - The database backend is PostgreSQL
-  - The Python version is above 3.5
+  - The Python version is above 3.8
 
 # Table of contents
 
@@ -17,7 +17,6 @@ This is a Django CRUD App with a PostgreSQL database. This small application imp
 * [node.js] - evented I/O for the backend
 * [Express] - fast node.js network app framework [@tjholowaychuk]
 * [Gulp] - the streaming build system
-* [Breakdance](http://breakdance.io) - HTML to Markdown converter
 * [jQuery] - duh
 
 And of course Dillinger itself is open source with a [public repository][dill]

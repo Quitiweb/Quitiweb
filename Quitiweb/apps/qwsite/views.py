@@ -3,19 +3,25 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 
-from . import models
+from Quitiweb.apps.qwsite.models import cv
 from .forms import ContactForm
 
+
 def index(request):
-    return render(request, 'qwsite/index.html')
+    curriculo = cv.objects.all().first()
+    template = loader.get_template('qwsite/index.html')
 
-def cv(request):
-    cv_list = models.cv.objects.all()
+    context = {'cv': curriculo}
+
+    return HttpResponse(template.render(context, request))
+
+
+def curriculum_vitae(request):
+    cv_list = cv.objects.all()
     template = loader.get_template('qwsite/cv.html')
+    form = ContactForm()
 
-    if request.method == 'GET':
-        form = ContactForm()
-    else:
+    if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             subject = form.cleaned_data['subject']
@@ -26,7 +32,6 @@ def cv(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found')
 
-            form = ContactForm()
             return redirect('success')
         else:
             print('Error en el formulario')
@@ -38,5 +43,6 @@ def cv(request):
 
     return HttpResponse(template.render(context, request))
 
-def successView(request):
+
+def success_view(request):
     return render(request, 'qwsite/success.html')

@@ -1,15 +1,16 @@
 {% extends "qwsite/base.html" %}
 
-{% load staticfiles %}
+{% load static %}
 
 {% block content %}
 
 	<!-- Header -->
 		<header id="header">
 			<img id="QLogo" class="QLogo" title="Quitiweb" src="{% static 'qwsite/img/QW_Logo_white.png' %}" alt="Quitiweb" />
-                     <h2>Rafael Ruiz Romero</h2>
-                     <p>Web App Developer</p>
-                     <p>Python &nbsp;&bull;&nbsp; Django &nbsp;&bull;&nbsp; JavaScript &nbsp;&bull;&nbsp; HTML5 &nbsp;&bull;&nbsp; CSS3 &nbsp;&bull;&nbsp; Ajax</p>
+			<h2>{{ cv.name }}</h2>
+			<p>{{ cv.title }}</p>
+			<p>Python &nbsp;&bull;&nbsp; Django &nbsp;&bull;&nbsp; JavaScript &nbsp;&bull;&nbsp; HTML5 &nbsp;&bull;&nbsp; CSS3 &nbsp;&bull;&nbsp; Ajax</p>
+
 			<nav>
 				<ul>
 					<li><a href="https://twitter.com/Quitiweb" class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
