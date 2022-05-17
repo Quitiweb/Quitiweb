@@ -103,10 +103,14 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# Kradleco stuff:
+# DreamHost stuff:
 .htaccess
 passenger_*.py
 
 # Pycharm stuff:
 .idea
 .idea/
+
+# DB
+db.sqlite3
+

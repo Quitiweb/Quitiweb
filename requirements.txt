@@ -1,7 +1,7 @@
 django==4.0.4
 django-tinymce==3.4.0
 # stripe==2.26.0
-# gitpython==2.1.11
+gitpython==3.1.27
 Pillow==9.0.1
 pandas==1.4.2
 folium==0.12.1.post1
