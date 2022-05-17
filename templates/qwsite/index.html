@@ -9,7 +9,15 @@
 			<img id="QLogo" class="QLogo" title="Quitiweb" src="{% static 'qwsite/img/QW_Logo_white.png' %}" alt="Quitiweb" />
 			<h2>{{ cv.name }}</h2>
 			<p>{{ cv.title }}</p>
-			<p>Python &nbsp;&bull;&nbsp; Django &nbsp;&bull;&nbsp; JavaScript &nbsp;&bull;&nbsp; HTML5 &nbsp;&bull;&nbsp; CSS3 &nbsp;&bull;&nbsp; Ajax</p>
+			<p>
+				{% for sk in cv.skills.all %}
+					{% if forloop.last %}
+						<span>{{ sk.title }}</span>
+					{% else %}
+						<span>{{ sk.title }} &nbsp;&bull;&nbsp; </span>
+					{% endif %}
+				{% endfor %}
+			</p>
 
 			<nav>
 				<ul>
