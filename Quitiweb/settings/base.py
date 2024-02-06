@@ -28,10 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     # my apps
     'Quitiweb.apps.qwsite',
-    'Quitiweb.apps.qaweb',
 ]
 
 MIDDLEWARE = [
