@@ -17,10 +17,6 @@
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)
 ![UNIX based OS](https://img.shields.io/badge/-UNIX%20based%20OS-61DAFB?style=flat-square&logo=gnu-bash&logoColor=ffffff&color=E95420)
 
-## Github Stats
-
-<img align="center" src="https://github-readme-stats.vercel.app/api?username=Quitiweb&show_icons=true&hide_border=true?&theme=vue-dark" />
-
 ## English Level
 
 <img width="1561" alt="Screenshot 2022-11-22 at 16 56 43" src="https://user-images.githubusercontent.com/8633009/203361082-21b260eb-b106-499d-b7a0-cffce08efed4.png">
